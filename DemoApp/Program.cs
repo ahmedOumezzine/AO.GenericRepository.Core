@@ -21,6 +21,7 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>(
             })
                 .AddEntityFrameworkStores<DemoDbContext>()
                 .AddDefaultTokenProviders();
+builder.Services.AddScoped(typeof(EFDbContext), typeof(DemoDbContext));
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
 var app = builder.Build();
