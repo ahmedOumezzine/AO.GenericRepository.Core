@@ -21,16 +21,34 @@ namespace AO.GenericRepository.Core.Data
             return SpecificationEvaluator<T>.GetQuery(_context.Set<T>().AsQueryable(), specification);
         }
 
-        public List<T> FindAllAsync(Func<T, bool> match)
+        public List<T> FindAll(Func<T, bool> match)
         {
-            return  _context.Set<T>().AsEnumerable().Where(match).ToList();
+            return  _context.Set<T>().Where(match).ToList();
         }
 
+        public T Find(Expression<Func<T, bool>> match)
+        {
+            return _context.Set<T>().FirstOrDefault(match);
+        }
+
+        public async Task<T> FindAsync(Expression<Func<T, bool>> match)
+        {
+            return await _context.Set<T>().FirstOrDefaultAsync(match);
+        }
+
+        public List<T> GetAll()
+        {
+            return _context.Set<T>().ToList();
+        }
         public async Task<List<T>> GetAllAsync()
         {
             return await _context.Set<T>().ToListAsync();
         }
 
+        public T GetById(int id)
+        {
+            return _context.Set<T>().Find(id);
+        }
         public async Task<T> GetByIdAsync(int id)
         {
             return await _context.Set<T>().FindAsync(id);
@@ -100,7 +118,15 @@ namespace AO.GenericRepository.Core.Data
         {
             return await _context.Set<T>().CountAsync();
         }
+        public int Count()
+        {
+            return  _context.Set<T>().Count();
+        }
 
+        public int Count(Expression<Func<T, bool>> match)
+        {
+            return  _context.Set<T>().Where(match).Count();
+        }
         public async Task<int> CountAsync(Expression<Func<T, bool>> match)
         {
             return await _context.Set<T>().Where(match).CountAsync();
