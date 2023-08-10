@@ -6,6 +6,9 @@
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Version>1.0.3</Version>
+    <Title>AO.GenericRepository.Core</Title>
+    <Description>Ce repository contient l'implémentation du Generic Repository pour Entity Framework Core</Description>
+    <PackageProjectUrl>https://github.com/ahmedOumezzine/AO.GenericRepository.Core</PackageProjectUrl>
   </PropertyGroup>
 
 	<ItemGroup>
