@@ -1,11 +1,10 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace AO.GenericRepository.Core.Contexts
 {
-    public class DbContext : IdentityDbContext
+    public class EFDbContext : DbContext
     {
-        public DbContext(DbContextOptions<DbContext> options)
+        public EFDbContext(DbContextOptions<DbContext> options)
             : base(options)
         {
         }

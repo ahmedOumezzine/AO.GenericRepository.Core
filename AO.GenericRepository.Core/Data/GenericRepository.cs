@@ -1,16 +1,16 @@
-﻿using AO.GenericRepository.Core.Interfaces;
+﻿using AO.GenericRepository.Core.Contexts;
+using AO.GenericRepository.Core.Interfaces;
 using AO.GenericRepository.Core.Specification;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
-using DbContext = AO.GenericRepository.Core.Contexts.DbContext;
 
 namespace AO.GenericRepository.Core.Data
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
-        protected readonly DbContext _context;
+        protected readonly EFDbContext _context;
 
-        public GenericRepository(DbContext context = null)
+        public GenericRepository(EFDbContext context = null)
         {
             _context = context;
         }
