@@ -21,7 +21,6 @@ namespace AO.GenericRepository.Core.Interfaces
          void AddRangeAndSave(IEnumerable<T> obj);
          void Update(T obj);
         void UpdateAndSave(T obj);
-        void UpdateRangeAndSave(T obj);
         void Delete(T id);
          void DeleteAndSave(T id);
          void DeleteRange(IEnumerable<T> id);
