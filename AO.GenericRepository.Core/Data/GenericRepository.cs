@@ -1,5 +1,4 @@
-﻿using AO.GenericRepository.Core.Contexts;
-using AO.GenericRepository.Core.Interfaces;
+﻿using AO.GenericRepository.Core.Interfaces;
 using AO.GenericRepository.Core.Specification;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
